@@ -1,10 +1,85 @@
 /* parcel_app/src/scss/main.scss */
     
 @import 'config';
-    
-h1 {
-  color: $color-primary;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+@mixin flex-box($align, $justify, $direction: row, $wrap: wrap) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+}
+
+@mixin hover-color( $color, $t ) {
+    transition: color $t ease;
+    &:hover{
+        color: $color;
+    }
+}
+
+@mixin hover-( $color, $t ) {
+    transition: color $t ease;
+    &:hover{
+        color: $color;
+    }
+}
+
+
+p {
+    color: blue;
+    @include hover-color(red, 0.5s);
+}
+
+
+
+.navbar-container{
+    display: flex;
+    width: 1140px;
+    margin: 0px auto;
+    justify-content: space-between;
+}
+
+
+.navbar-title,
+.navbar-nav{
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+    li{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+    }
+}
+
+.page-home{
+    text-align: center;
+}
+
+
+.box-1 {
+	@include flex-box(center, center);
+}
+
+.box-2 {
+	@include flex-box(end, center, column);
+}
+
+.box-3 {
+	@include flex-box(center, center, $wrap: nowrap);
+}
+
+.item {
+    &-3{
+    	@include flex-box(center, center, $wrap: nowrap);
+    }
+    &-2{
+        
+    	@include flex-box(center, center, $wrap: nowrap);
+    }
+    &-1{
+        
+    	@include flex-box(center, center, $wrap: nowrap);
+    }
 }
