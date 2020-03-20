@@ -1,0 +1,10 @@
+/* parcel_app/src/scss/main.scss */
+    
+@import 'config';
+    
+h1 {
+  color: $color-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,6 @@
+/* parcel_app/.babelrc */
+{
+    "presets": [
+        "env"
+    ]
+}
