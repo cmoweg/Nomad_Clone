@@ -2,14 +2,6 @@
     
 @import 'config';
 
-@mixin flex-box($align, $justify, $direction: row, $wrap: wrap) {
-	display: flex;
-	align-items: $align;
-	justify-content: $justify;
-	flex-direction: $direction;
-	flex-wrap: $wrap;
-}
-
 @mixin hover-color( $color, $t ) {
     transition: color $t ease;
     &:hover{
@@ -24,6 +16,10 @@
     }
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
 
 p {
     color: blue;
@@ -31,6 +27,9 @@ p {
 }
 
 
+nav{
+    background-color: brown;
+}
 
 .navbar-container{
     display: flex;
@@ -45,7 +44,14 @@ p {
     display: flex;
     list-style: none;
     align-items: center;
-
+    color: white;
+    margin: 10px;
+    .navbar-img{
+        width: 44px;
+        height: 34.250px;
+        padding-right: 20px;
+        border-right: 2px white solid;
+    }
     li{
         display: flex;
         align-items: center;
@@ -54,32 +60,71 @@ p {
 }
 
 .page-home{
+    min-height: 700px;
     text-align: center;
-}
+    $file: unquote("https://picsum.photos/2000/700?blur=5&grayscale");
+    color: white;
+    background-image: url("#{$file}");
 
-
-.box-1 {
-	@include flex-box(center, center);
-}
-
-.box-2 {
-	@include flex-box(end, center, column);
-}
-
-.box-3 {
-	@include flex-box(center, center, $wrap: nowrap);
-}
-
-.item {
-    &-3{
-    	@include flex-box(center, center, $wrap: nowrap);
+    h2,a{
+        position: relative;
+        top: 100px;
     }
-    &-2{
-        
-    	@include flex-box(center, center, $wrap: nowrap);
+    a{
+        padding: 20px 40px;
+        top: 140px;
+        border-radius: 30px;
+        background-color: orange;
     }
-    &-1{
-        
-    	@include flex-box(center, center, $wrap: nowrap);
+}
+
+.course-block{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
+    .container{
+        margin: 10px 40px;
+        >h2{
+            font-size: 40px;
+            margin: 40px 0;
+        }
+    }
+}
+.course-list{
+    display: grid;
+    grid-gap: 30px;
+    grid-auto-rows: 300px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    div{ color: black !important;}
+}
+
+
+footer{
+    height: 20%;
+    min-height: 300px;
+    
+    background-color: #0e1d35;
+    .social-icons{
+        width: 20%;
+        margin: 20px auto;
+        display: flex;
+    }
+    .social-link{
+        margin: 30px 10px;
+        text-align: center;
+        line-height: 15px;
+    }
+    .container{
+        .row{
+            text-align: center;
+            p{
+                color: gray;
+            }
+            width: 80%;
+            margin: 20px auto 0;
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }
